@@ -1,29 +1,46 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
-Vue.use(VueRouter)
+import Vue from 'vue'
+import Router from 'vue-router';
+import TaskListComponent from '../components/TaskListComponent'
+import TaskShowComponent from '../components/TaskShowComponent'
+import TaskCreateComponent from '../components/TaskCreateComponent'
+import TaskEditComponent from '../components/TaskEditComponent'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'task.list',
+    component: TaskListComponent
   },
+  
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/:taskId',
+    name: 'task.show',
+    component: TaskShowComponent,
+    props: true
+  },
+
+  {
+    path: '/create',
+    name: 'task.create',
+    component: TaskCreateComponent,
+    props: true
+  },
+
+  {
+    path: '/:taskId/edit',
+    name: 'task.edit',
+    component: TaskEditComponent,
+    props: true
+  },
+
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
+Vue.use(Router);
+
+const router = new Router({
+  routes,
+  mode: 'history'
+});
 
 export default router
