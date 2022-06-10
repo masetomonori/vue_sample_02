@@ -14,25 +14,25 @@
             </thead>
             <tbody>
 
-            <tr v-for="(task, index) in tasks" :key="index">
-                <th scope="row">{{ task.id }}</th>
-                <td>{{ task.name }}</td>
-                <td>{{ task.course }}</td>
-                <td>task.person_in_charge</td>
-                <td>
-                    <router-link v-bind:to="{name: 'task.show', params: {taskId: task.id }}">
-                        <button>Show</button>
-                    </router-link>
-                </td>
-                <td>
-                    <router-link v-bind:to="{name: 'task.edit', params: {taskId: task.id }}">
-                        <button>Edit</button>
-                    </router-link>
-                </td>
-                <td>
-                    <button v-on:click="deleteTask(task.id)">Delete</button>
-                </td>
-            </tr>
+            <v-list v-for="(task, index) in tasks" :key="index">
+                <v-list-item-group>
+                    <v-list-item>
+                        <v-list-item-content>
+                            <v-list-item-title>{{ task.id }}</v-list-item-title>
+                        </v-list-item-content>
+                        <v-list-item-content>
+                            <v-list-item-title>{{ task.name }}</v-list-item-title>
+                        </v-list-item-content>
+                        <v-list-item-content>
+                            <v-list-item-title>{{ task.course }}</v-list-item-title>
+                        </v-list-item-content>
+
+                        <v-btn v-bind:to="{name: 'task.show', params: {taskId: task.id }}">Show</v-btn>
+                        <v-btn v-bind:to="{name: 'task.edit', params: {taskId: task.id }}">Edit</v-btn>
+                        <v-btn v-on:click="deleteTask(task.id)">Delete</v-btn>
+                    </v-list-item>
+                </v-list-item-group>
+            </v-list>
             </tbody>
         </table>
     </div>
