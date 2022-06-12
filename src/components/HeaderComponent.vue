@@ -1,19 +1,17 @@
 <template>
-    <div>
-        <div>
-            <nav>
-                <span>Vue Laravel SPA</span>
-                <div>
-                    <router-link v-bind:to="{name: 'task.list'}">
-                        <button >List</button>
-                    </router-link>
-                    <router-link v-bind:to="{name: 'task.create'}">
-                        <button >ADD</button>
-                    </router-link>
-                </div>
-            </nav>
-        </div>
-    </div>
+    <v-toolbar flat>
+        <v-toolbar-title>Vue Laravel SPA</v-toolbar-title>
+        <v-spacer></v-spacer>
+            <v-toolbar-items>
+                <v-btn v-bind:to="{name: 'task.list'}">
+                    List
+                </v-btn>    
+                <v-btn v-bind:to="{name: 'task.create'}">
+                    ADD
+                </v-btn>
+            </v-toolbar-items>
+    </v-toolbar>
+    
 </template>
 
 <script>
