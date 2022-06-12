@@ -1,4 +1,7 @@
 <template>
+  <v-container>
+  <v-row>
+  <v-col cols="10">
   <v-data-table :headers="headers" :items="tasks">
     <template v-slot:[`item.actions`]="{ item }">
       <v-btn icon v-bind:to="{name: 'task.show', params: {taskId: item.id }}">
@@ -12,6 +15,9 @@
       </v-btn>
     </template>
   </v-data-table>
+  </v-col>
+  </v-row>
+  </v-container>
 </template>
 
 <script>

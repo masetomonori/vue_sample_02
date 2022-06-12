@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer
+    <!--v-navigation-drawer
       v-model="drawer"
       app
       class="pt-4"
@@ -14,7 +14,7 @@
         :size="n === 1 ? 36 : 20"
         class="d-block text-center mx-auto mb-9"
       ></v-avatar>
-    </v-navigation-drawer>
+    </v-navigation-drawer-->
 
     <v-main>
       <div>
