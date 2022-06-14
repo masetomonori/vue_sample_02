@@ -1,29 +1,32 @@
 <template>
-    <div>
-        <div>
-            <div>
-                <form>
-                    <div>
-                        <label>ID</label>
-                        <input type="text" readonly id="id" v-model="task.id">
-                    </div>
-                    <div>
-                        <label>Title</label>
-                        <input type="text" readonly id="title" v-model="task.name">
-                    </div>
-                    <div>
-                        <label>Content</label>
-                        <input type="text" readonly id="content" v-model="task.course">
-                    </div>
-                    <div>
-                        <label>Person In Charge</label>
-                        <input type="text" readonly id="person-in-charge" value="Ichiro">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+    <v-form>
+        <v-container>
+            <v-row>
+            <v-col cols="10">
+            <v-text-field
+                v-model="task.id"
+                label="Number"
+                readonly
+                
+            ></v-text-field>
+            <v-text-field
+                v-model="task.name"
+                label="名前"
+                readonly
+            ></v-text-field>
+            <v-text-field
+                v-model="task.course"
+                label="所属"
+                readonly
+            ></v-text-field>
+           </v-col>
+           </v-row>
+        </v-container>
+    </v-form>
 </template>
+
+
+
 
 <script>
     import axios from 'axios'
