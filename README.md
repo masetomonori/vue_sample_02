@@ -1,4 +1,10 @@
 # vue_sample_02
+  backend laravel_sample_01
+     XAMPPよりmysqlの起動
+     php artisan serve
+  frontend vue_sample_02
+     npm run serve 
+
 
 ## Project setup
 ```
