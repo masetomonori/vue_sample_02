@@ -9,7 +9,7 @@
   frontend vue_sample_02
 ```
      npm run serve 
-
+```
 
 ## Project setup
 ```
